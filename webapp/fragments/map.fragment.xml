@@ -1,0 +1,49 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:vbm="sap.ui.vbm" xmlns="sap.m" xmlns:tnt="sap.tnt"
+	xmlns:vk="sap.ui.vk">
+	<Dialog contentHeight="100%" contentWidth="100%" horizontalScrolling="false" showHeader="false" state="None" stretch="false"
+		title="Select Functional Location" type="Standard" verticalScrolling="false">
+		<content>
+			<vk:MapContainer autoAdjustHeight="true">
+				<vk:listPanelStack>
+					<vk:ListPanelStack width="280px">
+						<vk:content>
+							<vk:ListPanel id="location" headerText="Functional Location" headerIcon="sap-icon://factory" expanded="true"
+								selectionChange="onSelectionChange" selectionMode="SingleSelectMaster" items="{globalModel>/FunctionalLocation}">
+								<vk:items>
+									<vk:LegendItem title="{globalModel>FunctionalLocation}"/>
+								</vk:items>
+							</vk:ListPanel>
+						</vk:content>
+					</vk:ListPanelStack>
+				</vk:listPanelStack>
+				<vk:content>
+					<vk:ContainerContent title="Geo Map" icon="sap-icon://map-2">
+						<vk:content>
+							<vbm:GeoMap id="GeoMap" initialPosition="{globalModel>/possarray/3/location}" initialZoom="2" zoomlevel="2">
+								<vbm:vos>
+									<vbm:Spots items="{globalModel>/possarray}">
+										<vbm:Spot position="{globalModel>location}" click="onClickSpot" tooltip="{globalModel>FunctionalLocation}"
+											labelText="{globalModel>FunctionalLocation} {globalModel>FunctionalLocationDesc}" type="{globalModel>type}"/>
+									</vbm:Spots>
+									<vbm:Spots>
+										<vbm:Spot position="{globalModel>/currentloc}" click="onClickSpot1" tooltip="Current Location" labelText="Current Location" type="Warning"/>
+									</vbm:Spots>
+									<vbm:Circles click="onClickItem" contextMenu="onContextMenuItem">
+										<vbm:Circle position="{globalModel>/possarray/3/location}" tooltip="Current Location" radius="30" color="rgba(92,186,230,0.6)"
+											colorBorder="rgb(255,255,255)" hotDeltaColor="rgba(92,186,230,0.8)" click="onClickCircle" contextMenu="onContextMenuCircle"/>
+									</vbm:Circles>
+								</vbm:vos>
+							</vbm:GeoMap>
+						</vk:content>
+					</vk:ContainerContent>
+				</vk:content>
+			</vk:MapContainer>
+		</content>
+		<buttons>
+			<Button text="Close" press="closeMap" type="Emphasized"/>
+		</buttons>
+		<!--<footer>-->
+		<!--	<Button text="direction" press="direction"/>-->
+		<!--</footer>-->
+	</Dialog>
+</core:FragmentDefinition>

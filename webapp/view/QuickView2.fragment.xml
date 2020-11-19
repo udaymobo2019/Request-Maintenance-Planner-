@@ -1,0 +1,20 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" controllerName="com.sap.build.ba293bd41-us_1.mobileRequestMaintenanceV5BNewdash.controller.QuickView2" xmlns="sap.m">
+    <QuickView placement="PreferredLeftOrFlip" width="320px">
+        <pages>
+            <QuickViewPage header="Environmental Technical Object" title="" titleUrl="" description="" icon="">
+                <groups>
+                    <QuickViewGroup visible="true" heading="Location  Details">
+                        <elements>
+                            <QuickViewGroupElement id = "plant1" label="Planning Plant" value="" type="link" emailSubject="" pageLinkId="" url="" target="_blank" visible="true"/>
+                            <QuickViewGroupElement id = "descri1" label="Location" value="" type="email" emailSubject="" pageLinkId="" url="" target="_blank" visible="true"/>
+                            <QuickViewGroupElement id = "plantgrp1" label="Main Work center" value="" type="link" emailSubject="" pageLinkId="" url="" target="_blank" visible="true"/>
+                            <QuickViewGroupElement id= "sales1" label="ABC Indicator" value= "" type="link" emailSubject="" pageLinkId="" url="" target="_blank" visible="true"/>
+                            <QuickViewGroupElement id = "dischanel1" label="System" value="" type="link" emailSubject="" pageLinkId="" url="" target="_blank" visible="true"/>
+                          
+                        </elements>
+                    </QuickViewGroup>
+                </groups>
+            </QuickViewPage>
+        </pages>
+    </QuickView>
+</core:FragmentDefinition>
